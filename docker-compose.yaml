@@ -1,0 +1,14 @@
+version: "3"
+services:
+  code-server:
+    image: serialt/vscode:v0.0.1
+    container_name: vscode
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - "${HOME}/.ssh:${HOME}/.ssh"
+      - "${HOME}/.config/code-server/config.yaml:/home/coder/.config/code-serve/config.yaml"
+      - "${HOME}/github:/home/coder/github"
+    ports:
+      - 8080:8080
+      - 7000-7020:7000-7020

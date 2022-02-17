@@ -1,0 +1,49 @@
+name: sync
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  schedule:
+    - cron: "30 5 * * 1"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  sync-aliyun:
+    runs-on: ubuntu-latest
+    # strategy:
+    #   max-parallel: 4
+    #   matrix:
+    #     python-version: [3.9]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        # 将GTIHUB的信息都打印出来，后面的脚本可以使用这些信息，例如后面的镜像TAG用的就是这里面的commitid
+        run: echo "Hello ${{ github.event.commits[0].id }}"
+      - name: Login docker hub
+        env:
+          DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        # 指定login命令登录hub.docker.com
+        run: |
+          echo "${DOCKER_PASSWORD}" | docker login --username ${DOCKER_USERNAME} --password-stdin
+      - name: Set up Docker Buildx
+        # 使用buildx来构建镜像
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          buildx-version: latest
+
+      - name: Build dockerfile (with push)
+      # 构建镜像，用buildx可以同时构建X86和ARM架构的镜像，然后推送到hub.docker.com
+        run: |
+          fullCommit="${{ github.event.commits[0].id }}" && \
+          docker buildx build \
+          --platform=linux/amd64 \
+          --output "type=image,push=true" \
+          --file ./Dockerfile . \
+          --tag serialt/vscode:"${fullCommit: 0: 7}"
