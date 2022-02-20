@@ -28,6 +28,8 @@ RUN  yum -y install cronie git pwgen python3 python3-devel vim-enhanced bash-com
 
 
 ADD run.sh /opt/
+ADD config.yaml /root/.config/code-server/config.yaml
+ADD settings.json /root/.local/share/code-server/Machine/settings.json 
 ADD build.sh /opt/
 RUN bash /opt/build.sh
 

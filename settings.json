@@ -1,0 +1,500 @@
+{
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 2,
+    "remote.SSH.localServerDownload": "auto",
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.enableAzureIntegration": true,
+    "remote.SSH.lockfilesInTmp": true,
+    // ssh超时连接
+    "remote.SSH.connectTimeout": 15,
+    // 启用后，扩展将本地下载并安装在远程上。
+    "remote.downloadExtensionsLocally": true,
+    "remote.SSH.remotePlatform": {
+        "imau.io": "linux",
+        "www.imau.io": "linux",
+        "gitlab-test": "linux"
+    },
+    "editor.tabCompletion": "on",
+    "editor.guides.bracketPairs": true,
+    // "editor.fontLigatures": null,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4, // tab建空格数
+    "editor.wordWrap": "off", // 不折行
+    "editor.fontSize": 13,
+    "workbench.colorCustomizations": {},
+    "editor.suggest.snippetsPreventQuickSuggestions": true, // 自动补全
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "files.associations": {
+        "*.yml": "ansible",
+        "*.yaml": "helm",
+        "*.go": "go",
+        "*.sh": "shellscript",
+        "Makfile": "makefile"
+    },
+    "files.exclude": { // 这些文件将不会显示在工作空间中
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js": {
+            "when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作空中
+        }
+        // "**/node_modules": true
+    },
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "terminal.integrated.profiles.windows": {
+        "Git-Bash": {
+            "path": "D:\\Git\\bin\\bash.exe"
+        },
+        "PowerShell -NoProfile": {
+            "source": "PowerShell",
+            "args": [
+                "-NoProfile"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Git-Bash",
+    "terminal.integrated.defaultProfile.osx": "bash",
+    // 控制是否将在终端中选定的文本复制到剪贴板。
+    "terminal.integrated.copyOnSelection": true,
+    "git.ignoreLegacyWarning": true,
+    // "git.enableSmartCommit": "",
+    // 若设置为 true，则自动从当前 Git 存储库的默认远程库提取提交。若设置为“全部”，则从所有远程库进行提取。
+    "git.autofetch": true,
+    // 同步 Git 存储库前请先进行确认。
+    "git.confirmSync": false,
+    // 控制在强制推送前是否进行确认。
+    "git.confirmForcePush": true,
+    // 使用 GPG 或 x.509 启用提交签名。
+    "git.enableCommitSigning": false,
+    // 启用后，在拉取时获取所有分支。否则，仅获取当前。
+    "git.fetchOnPull": false,
+    // 遵循“运行同步命令时推送所有标记”。
+    "git.followTagsWhenSync": false,
+    // 拉取时提取所有标签。
+    "git.pullTags": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "Comment",
+                "scope": [
+                    "comment",
+                    "comment.block",
+                    "comment.block.documentation",
+                    "comment.line",
+                    "comment.line.double-slash",
+                    "punctuation.definition.comment"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                    //斜体 "fontStyle": "italic",
+                    //斜体下划线 "fontStyle": "italic underline",
+                    //斜体粗体下划线 "fontStyle": "italic bold underline",
+                }
+            }
+        ]
+    },
+    "python.pythonPath": "$workspaceRoot/venv/bin/python3",
+    "python.venvPath": "$workspaceRoot/venv",
+    "python.jediEnabled": true,
+    "python.autoComplete.addBrackets": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.testing.pytestArgs": [
+        "venv"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": false,
+    "python.terminal.activateEnvironment": true,
+    "go.testOnSave": true,
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    // 包查找模式
+    "go.gocodePackageLookupMode": "go",
+    "go.gotoSymbol.includeGoroot": true,
+    "go.gotoSymbol.includeImports": true,
+    // go build相关
+    "go.useLanguageServer": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.terminal.activateEnvironment": true,
+    "go.buildOnSave": "off",
+    "go.gocodeAutoBuild": true,
+    "go.installDependenciesWhenBuilding": true,
+    "go.buildFlags": [],
+    "go.buildTags": "",
+    "go.coverOnSingleTest": true,
+    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+    "go.docsTool": "gogetdoc",
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
+    "go.gopath": "~/go",
+    "go.toolsGopath": "~/go",
+    "go.lintOnSave": "package",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.formatFlags": [],
+    "go.vetFlags": [],
+    "go.vetOnSave": "package",
+    "go.generateTestsFlags": [],
+    "go.liveErrors": {
+        "enabled": true,
+        "delay": 500
+    },
+    "go.gocodeFlags": [
+        "-builtin",
+        "-ignore-case",
+        "-unimported-packages"
+    ],
+    "go.enableCodeLens": {
+        "references": true,
+        "runtest": true
+    },
+    "go.delveConfig": {
+        "dlvLoadConfig": {
+            "followPointers": true,
+            "maxVariableRecurse": 1,
+            "maxStringLen": 64,
+            "maxArrayValues": 64,
+            "maxStructFields": -1
+        },
+        "apiVersion": 2,
+        "showGlobalVariables": true
+    },
+    "go.editorContextMenuCommands": {
+        "toggleTestFile": true,
+        "addTags": true,
+        "removeTags": true,
+        "testAtCursor": true,
+        "testFile": true,
+        "testPackage": true,
+        "generateTestForFunction": true,
+        "generateTestForFile": true,
+        "generateTestForPackage": true,
+        "addImport": true,
+        "testCoverage": true,
+        "playground": true,
+        "debugTestAtCursor": true
+    },
+    "go.playground": {
+        "openbrowser": false,
+        "share": false,
+        "run": false
+    },
+    "go.addTags": {
+        "tags": "json",
+        "options": "json=omitempty",
+        "promptForTags": true,
+        "transform": "snakecase"
+    },
+    "go.removeTags": {
+        "tags": "",
+        "options": "",
+        "promptForTags": false
+    },
+    "go.alternateTools": {
+        "go-langserver": "gopls"
+    },
+    "go.languageServerFlags": [],
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": false
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "autopep8",
+    // "python.formatting.provider": "yapf",
+    "python.formatting.autopep8Path": "autopep8",
+    // Whether to lint Python files.
+    "python.linting.enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=248"
+    ],
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=pygame",
+        "--unsafe-load-any-extension=y"
+    ],
+    "python.linting.ignorePatterns": [
+        "**/site-packages/**/*.py",
+        ".vscode/*.py"
+    ],
+    // Whether to lint Python files when saved.
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintEnabled": false,
+    "python.languageServer": "Jedi",
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "golang.go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "gopls": {
+        "usePlaceholders": true,
+        "completionDocumentation": true
+    },
+    // "gopls": {
+    //   "usePlaceholders": true, // add parameter placeholders when completing a function
+    //   "wantCompletionDocumentation": true // for documentation in completion items
+    // },
+    "files.eol": "\n",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook",
+        "*.md": "default"
+    },
+    // Enable/disable default YAML formatter
+    "yaml.format.enable": true,
+    // Enable/disable completion feature
+    "yaml.completion": true,
+    "yaml.customTags": [
+        "!encrypted/pkcs1-oaep scalar",
+        "!vault scalar"
+    ],
+    "redhat.telemetry.enabled": false,
+    "go.toolsManagement.autoUpdate": true,
+    "terminal.integrated.tabs.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.defaultInterpreterPath": "venv/bin/python3",
+    "workbench.colorTheme": "Mac Classic",
+    // Kubernetes configuration
+    "vs-kubernetes": {
+        "vs-kubernetes.namespace": "",
+        "vs-kubernetes.kubectl-path": "",
+        "vs-kubernetes.helm-path": "",
+        "vs-kubernetes.minikube-path": "",
+        "vs-kubernetes.kubectlVersioning": "user-provided",
+        "vs-kubernetes.outputFormat": "yaml",
+        "vs-kubernetes.kubeconfig": "",
+        "vs-kubernetes.knownKubeconfigs": [],
+        "vs-kubernetes.autoCleanupOnDebugTerminate": false,
+        "vs-kubernetes.nodejs-autodetect-remote-root": true,
+        "vs-kubernetes.nodejs-remote-root": "",
+        "vs-kubernetes.nodejs-debug-port": 9229,
+        "vs-kubernetes.dotnet-vsdbg-path": "~/vsdbg/vsdbg",
+        "vs-kubernetes.local-tunnel-debug-provider": "",
+        "checkForMinikubeUpgrade": true,
+        "imageBuildTool": "Docker"
+    },
+    "vscode-kubernetes.helm-path.linux": "",
+    "vscode-kubernetes.helm-path.mac": "",
+    "vscode-kubernetes.helm-path.windows": "",
+    "vscode-kubernetes.kubectl-path": "",
+    "vscode-kubernetes.kubectl-path.linux": "",
+    "vscode-kubernetes.kubectl-path.mac": "",
+    "vscode-kubernetes.kubectl-path.windows": "",
+    "vscode-kubernetes.minikube-path": "",
+    "vscode-kubernetes.minikube-path.linux": "",
+    "vscode-kubernetes.minikube-path.mac": "",
+    "vscode-kubernetes.minikube-path.windows": "",
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "python": "cd $workspaceRoot && venv/bin/python3  $fileName",
+        "shell": "cd $workspaceRoot && bash  $fileName",
+        "go": "cd $workspaceRoot && go run .",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    // Set the working directory.
+    "code-runner.cwd": "",
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.terminalRoot": "$workspaceRoot",
+    "code-runner.executorMapByGlob": {
+        "pom.xml": "cd $dir && mvn clean package",
+        "*.test.js": "tap",
+        "*.js": "node",
+        "*.ss": "scheme"
+    },
+    // 设置为 false 如果你不想上传/下载扩展。
+    "sync.syncExtensions": true,
+    // 设置为 true 在编辑器打开时自动上传本地配置。[需要重启]
+    "sync.autoUpload": false,
+    "workbench.editor.enablePreview": false,
+    "fileheader.customMade": {
+        "Description   ": "IMAU of Serialt",
+        "Version       ": "1.0",
+        "Author        ": "serialt",
+        "Email         ": "tserialt@gmail.com",
+        "Github        ": "https://github.com/serialt",
+        "Date": "Do not edit",
+        "LastEditTime": "Do not edit",
+        "FilePath": "Do not edit",
+        "Other         ": "",
+        "              ": "",
+        "custom_string_obkoro1": "\n\n                人和代码，有一个能跑就行\n\n"
+    },
+    //函数注释
+    "fileheader.cursorMode": {
+        "description": "",
+        "param": "",
+        "return": ""
+    },
+    "fileheader.configObj": {
+        "createFileTime": true,
+        "language": {
+            "languagetest": {
+                "head": "/$$",
+                "middle": " $ @",
+                "end": " $/",
+                "functionSymbol": {
+                    "head": "/** ",
+                    "middle": " * @",
+                    "end": " */"
+                },
+                "functionParams": "js"
+            },
+            "sh/py/yaml/yml": {
+                "head": "# ***********************************************************************",
+                "middle": "# ",
+                "end": "# ***********************************************************************"
+            }
+            // "go": {
+            //     "head": "// ***********************************************************************",
+            //     "middle": "// ",
+            //     "end": "// ***********************************************************************"
+            // }
+        },
+        "autoAdd": true,
+        "autoAddLine": 100,
+        "autoAlready": true,
+        "annotationStr": {
+            "head": "/*",
+            "middle": " * @",
+            "end": " */",
+            "use": false
+        },
+        "headInsertLine": {
+            "php": 2,
+            "sh": 2
+        },
+        "beforeAnnotation": {
+            // "文件后缀": "该文件后缀的头部注释之前添加某些内容"
+            "sh": "#!/usr/bin/env bash",
+            "py": "#!/usr/bin/env python3\n# coding=utf-8"
+        },
+        "afterAnnotation": {
+            // "文件后缀": "该文件后缀的头部注释之后添加某些内容"
+            "sh": "\n\n",
+            "py": "\n\n"
+        },
+        "specialOptions": {
+            // 重命名特殊字段
+            "Date": "Created Time  ",
+            "LastEditTime": "Last modified ",
+            "FilePath": "FilePath      "
+        },
+        "switch": {
+            "newlineAddAnnotation": true
+        },
+        "supportAutoLanguage": [],
+        "prohibitAutoAdd": [
+            "json",
+            "md",
+            "yaml",
+            "yml",
+            "go",
+            "mod",
+            "sum"
+        ],
+        "folderBlacklist": [
+            // "文件夹禁止自动添加头部注释",
+            "node_modules",
+            ".vscode",
+            "idea",
+            ".git",
+            "venv"
+        ],
+        "prohibitItemAutoAdd": [
+            "项目的全称, 整个项目禁止自动添加头部注释, 可以使用快捷键添加"
+        ],
+        "moveCursor": false, // 不移动光标到`Description :`所在行
+        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+        "atSymbol": [
+            "@",
+            "@"
+        ],
+        "atSymbolObj": {
+            "文件后缀": [
+                "头部注释@符号",
+                "函数注释@符号"
+            ]
+        },
+        "colon": [
+            ": ",
+            ": "
+        ],
+        "colonObj": {
+            "文件后缀": [
+                "头部注释冒号",
+                "函数注释冒号"
+            ]
+        },
+        "filePathColon": "路径分隔符替换",
+        "showErrorMessage": false,
+        "writeLog": false,
+        "wideSame": false,
+        "wideNum": 13,
+        "functionWideNum": 0,
+        "CheckFileChange": false,
+        "createHeader": true,
+        "useWorker": false,
+        "designAddHead": true, // 添加注释图案时添加头部注释
+        "headDesignName": "dog",
+        "headDesign": false,
+        "cursorModeInternalAll": {
+            "cursorModeInternalAll": {
+                "ts": true, // ts文件后缀是函数内生成函数注释
+                "js": false, // js文件后缀是在函数外生成函数注释
+                "python": true, // python语言类型文件时在函数内生成函数注释
+                "defaultSetting": false // 默认是在函数外生成注释
+            },
+            "openFunctionParamsCheck": true,
+            "functionParamsShape": [
+                {}
+            ],
+            "functionBlankSpaceAll": {
+                "js": 2, // 单独设置文件:js文件后缀 缩进两格
+                "python": 4, // 设置语言: python语言类型 函数注释空格缩进4格
+                "defaultSetting": 0 // 不设置 默认值为0
+            },
+            "functionTypeSymbol": "*",
+            "typeParamOrder": "type param",
+            "customHasHeadEnd": {},
+            "throttleTime": 60000 // 5分钟内不更新文件更新的时间
+        }
+    },
+    "tabnine.experimentalAutoImports": true,
+    // 更新设置
+    "update.mode": "manual",
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.showReleaseNotes": true,
+    "extensions.autoCheckUpdates": false,
+    "extensions.autoUpdate": false,
+    // 如果设置成'true'，手动修改配置后不提醒「重启后生效」
+    "vsicons.dontShowConfigManuallyChangedMessage": true,
+    // 如果设置成'true'，关于新的版本消息将不再显示
+    "vsicons.dontShowNewVersionMessage": true,
+    // 如果设置成'true'，插件会自动匹配 Angular 模式
+    "vsicons.presets.angular": true,
+    // 如果设置成'true'，插件会自动使用官方 JS 图标
+    "vsicons.presets.jsOfficial": true,
+    // 如果设置成'true'，插件会自动使用官方 JSON 图标
+    "vsicons.presets.jsonOfficial": true,
+    // 如果设置成'true'，插件会自动匹配 NestJS 模式
+    "vsicons.presets.nestjs": true,
+    // 如果设置成'true'，插件会自动使用官方 TS 图标
+    "vsicons.presets.tsOfficial": true,
+    "workbench.iconTheme": "vscode-icons",
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true
+    },
+    "editor.unicodeHighlight.invisibleCharacters": false
+}
