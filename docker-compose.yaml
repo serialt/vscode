@@ -1,14 +1,28 @@
 version: "3"
 services:
-  code-server:
-    image: serialt/vscode:v0.0.1
+  vscode:
+    image: serialt/vscode:latest
     container_name: vscode
     restart: always
     volumes:
-      - /etc/localtime:/etc/localtime:ro
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/usr/bin/docker:/usr/bin/docker"
+      - "/usr/bin/docker-compose:/usr/bin/docker-compose"
+      - "/var/run/docker.sock:/var/run/docker.sock"
       - "${HOME}/.ssh:${HOME}/.ssh"
-      - "${HOME}/.config/code-server/config.yaml:/home/coder/.config/code-serve/config.yaml"
-      - "${HOME}/github:/home/coder/github"
+      # - "${HOME}/.config/code-server/config.yaml:/root/.config/code-server/config.yaml"
+      # - "${HOME}/.local/share/code-server/Machine/settings.json:/root/.local/share/code-server/Machine/settings.json"
+      - "${HOME}/go/bin:${HOME}/go/bin"
+      - "${HOME}/github:/root/github"
+      - "/yaml:/root/yaml"
     ports:
-      - 8080:8080
-      - 7000-7020:7000-7020
+      - "127.0.0.1:8080:8080"
+      - "7000-7020:7000-7020"
+   deploy:
+     resources:
+        limits:
+           cpus: '1'
+           memory: 1G
+        reservations:
+           cpus: '0.5'
+           memory: 200M
