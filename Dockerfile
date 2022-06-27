@@ -2,7 +2,7 @@
 #
 # Dockerizing CentOS7: Dockerfile for building CentOS images
 #
-FROM rockylinux:8.6
+FROM rockylinux:8
 
 LABEL mantainer="tserialt@gmail.com"
 
