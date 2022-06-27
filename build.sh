@@ -18,8 +18,8 @@
 # ***********************************************************************
 
 
-export IMAU_GO_VERSION=1.18beta2
-export IMAU_VSCODE_VERSION=4.0.1
+export IMAU_GO_VERSION=1.18.3
+export IMAU_VSCODE_VERSION=4.4.0
 export IMAU_DUMP_INIT=1.2.5
 
 
@@ -172,7 +172,6 @@ Remisa.shellman
 sandipchitale.vscode-kubernetes-helm-extras
 shaharkazaz.git-merger
 shanoor.vscode-nginx
-TabNine.tabnine-vscode
 technosophos.vscode-helm
 tht13.python
 Tim-Koehler.helm-intellisense
@@ -191,7 +190,6 @@ yzhang.markdown-all-in-one
 ZainChen.json
 zamerick.vscode-caddyfile-syntax
 zbr.vscode-ansible
-ziyasal.vscode-open-in-github
 )
 
     for aobj in ${extension_list[@]}

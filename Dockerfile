@@ -2,9 +2,9 @@
 #
 # Dockerizing CentOS7: Dockerfile for building CentOS images
 #
-FROM rockylinux:8.5
+FROM rockylinux:8.6
 
-LABEL mantainer="serialt <tserialt@gmail.com> build a vm image"
+LABEL mantainer="tserialt@gmail.com"
 
 
 # change marketplace to visualstudio
