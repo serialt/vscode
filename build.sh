@@ -6,8 +6,8 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2022-02-17 14:41:58
-# FilePath      : /yaml/vscode-server/run.sh
+# Last modified : 2022-06-28 20:24:11
+# FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
 # 
@@ -113,20 +113,14 @@ extension_list=(
 alefragnani.Bookmarks
 alefragnani.project-manager
 alexcvzz.vscode-sqlite
-bbenoist.shell
-caarlos0.language-prometheus
 cheshirekow.cmake-format
 christian-kohler.path-intellisense
 ckolkman.vscode-postgres
 codezombiech.gitignore
 cweijan.vscode-office
-cweijan.vscode-typora
 dhoeric.ansible-vault
-dongli.python-preview
 donjayamanne.git-extension-pack
 donjayamanne.githistory
-donjayamanne.python-environment-manager
-donjayamanne.python-extension-pack
 eamodio.gitlens
 felipecaputo.git-project-manager
 formulahendry.code-runner
@@ -134,7 +128,6 @@ formulahendry.terminal
 foxundermoon.shell-format
 golang.go
 Gruntfuggly.todo-tree
-himanoa.Python-autopep8
 howardzuo.vscode-git-tags
 huizhou.githd
 humao.rest-client
@@ -145,7 +138,6 @@ KevinRose.vsc-python-indent
 lunuan.kubernetes-templates
 magicstack.MagicPython
 matthewpi.caddyfile-support
-mgesbert.python-path
 mhutchie.git-graph
 mishkinf.goto-next-previous-member
 mrmlnc.vscode-apache

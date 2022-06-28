@@ -46,5 +46,4 @@ jobs:
           --platform=linux/amd64 \
           --output "type=image,push=true" \
           --file ./Dockerfile . \
-          --tag serialt/vscode:"${fullCommit: 0: 7}" && \ 
-          docker tag serialt/vscode:"${fullCommit: 0: 7} serialt/vscode:latest
+          --tag serialt/vscode:"${fullCommit: 0: 7}" 
