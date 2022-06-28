@@ -39,10 +39,10 @@ jobs:
           buildx-version: latest
 
       - name: Build dockerfile (with push)
-      # 构建镜像，用buildx可以同时构建X86和ARM架构的镜像，然后推送到hub.docker.com
+      # 构建镜像，ß然后推送到hub.docker.com
         run: |
           fullCommit="${{ github.event.commits[0].id }}" && \
-          docker buildx build \
+          docker build \
           --platform=linux/amd64 \
           --output "type=image,push=true" \
           --file ./Dockerfile . \
