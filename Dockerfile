@@ -15,10 +15,11 @@ RUN sed -e 's|^mirrorlist=|#mirrorlist=|g' \
     -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.aliyun.com/rockylinux|g' \
     -i.bak \
     /etc/yum.repos.d/Rocky-*.repo &&
-    yum -y install epel-release && sed -e "s|^metalink|#metalink|g" \
-    -e "s|^#baseurl=https://download.example/pub|baseurl=https://mirrors.aliyun.com/|g" \
-    -i.bak \
-    -i /etc/yum.repos.d/epel*.repo
+    yum -y install epel-release &&
+    sed -e "s|^metalink|#metalink|g" \
+        -e "s|^#baseurl=https://download.example/pub|baseurl=https://mirrors.aliyun.com/|g" \
+        -i.bak \
+        -i /etc/yum.repos.d/epel*.repo
 
 # install base software
 RUN yum -y install cronie git pwgen python3 python3-devel vim-enhanced bash-completion net-tools bind-utils openssh-clients wget lftp &&
