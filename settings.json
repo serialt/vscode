@@ -11,18 +11,19 @@
     // 启用后，扩展将本地下载并安装在远程上。
     "remote.downloadExtensionsLocally": true,
     "remote.SSH.remotePlatform": {
-        "imau.io": "linux",
-        "www.imau.io": "linux",
-        "gitlab-test": "linux"
+        "alma.imau.cc": "linux",
+        "www.imau.cc": "linux"
     },
     "editor.tabCompletion": "on",
     "editor.guides.bracketPairs": true,
     // "editor.fontLigatures": null,
+    "editor.experimental.stickyScroll.enabled": true,
     "editor.formatOnSave": true,
     "editor.tabSize": 4, // tab建空格数
     "editor.wordWrap": "off", // 不折行
     "editor.fontSize": 13,
     "workbench.colorCustomizations": {},
+    "workbench.layoutControl.enabled": true,
     "editor.suggest.snippetsPreventQuickSuggestions": true, // 自动补全
     "editor.quickSuggestions": {
         "other": true,
@@ -30,7 +31,7 @@
         "strings": true
     },
     "files.associations": {
-        "*.yml": "ansible",
+        "*.yml": "helm",
         "*.yaml": "helm",
         "*.go": "go",
         "*.sh": "shellscript",
@@ -208,9 +209,8 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "autopep8",
-    // "python.formatting.provider": "yapf",
-    "python.formatting.autopep8Path": "autopep8",
     // Whether to lint Python files.
+    "python.formatting.autopep8Path": "autopep8",
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=248"
@@ -296,7 +296,8 @@
         "javascript": "node",
         "python": "cd $workspaceRoot && venv/bin/python3  $fileName",
         "shell": "cd $workspaceRoot && bash  $fileName",
-        "go": "cd $workspaceRoot && go run .",
+        // "go": "cd $workspaceRoot && go run ."
+        "go": "cd $dir && go run .",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
@@ -320,20 +321,21 @@
     "workbench.editor.enablePreview": false,
     "fileheader.customMade": {
         "Description   ": "IMAU of Serialt",
-        "Version       ": "1.0",
+        // "Version       ": "1.0",
         "Author        ": "serialt",
-        "Email         ": "tserialt@gmail.com",
+        "Email         ": "t@imau.cc",
         "Github        ": "https://github.com/serialt",
         "Date": "Do not edit",
         "LastEditTime": "Do not edit",
         "FilePath": "Do not edit",
         "Other         ": "",
         "              ": "",
-        "custom_string_obkoro1": "\n\n                人和代码，有一个能跑就行\n\n"
+        "custom_string_obkoro1": "\n                人和代码，有一个能跑就行\n"
     },
     //函数注释
     "fileheader.cursorMode": {
         "description": "",
+        "author": "",
         "param": "",
         "return": ""
     },
@@ -343,11 +345,11 @@
             "languagetest": {
                 "head": "/$$",
                 "middle": " $ @",
-                "end": " $/",
+                "end": " $/ \n\n",
                 "functionSymbol": {
                     "head": "/** ",
                     "middle": " * @",
-                    "end": " */"
+                    "end": "*/\n\n"
                 },
                 "functionParams": "js"
             },
@@ -357,9 +359,9 @@
                 "end": "# ***********************************************************************"
             }
             // "go": {
-            //     "head": "// ***********************************************************************",
+            //     "head": "//",
             //     "middle": "// ",
-            //     "end": "// ***********************************************************************"
+            //     "end": "//"
             // }
         },
         "autoAdd": true,
@@ -400,7 +402,7 @@
             "md",
             "yaml",
             "yml",
-            "go",
+            // "go",
             "mod",
             "sum"
         ],
@@ -449,6 +451,7 @@
         "designAddHead": true, // 添加注释图案时添加头部注释
         "headDesignName": "dog",
         "headDesign": false,
+        "typeParamOrder": "param type", //参数类型 和 参数的位置自定义
         "cursorModeInternalAll": {
             "cursorModeInternalAll": {
                 "ts": true, // ts文件后缀是函数内生成函数注释
@@ -458,15 +461,15 @@
             },
             "openFunctionParamsCheck": true,
             "functionParamsShape": [
-                {}
+                "{",
+                "}"
             ],
             "functionBlankSpaceAll": {
-                "js": 2, // 单独设置文件:js文件后缀 缩进两格
-                "python": 4, // 设置语言: python语言类型 函数注释空格缩进4格
+                // "js": 2, // 单独设置文件：js文件后缀 缩进两格
+                "python": 4, // 设置语言：python语言类型 函数注释空格缩进4格
                 "defaultSetting": 0 // 不设置 默认值为0
             },
-            "functionTypeSymbol": "*",
-            "typeParamOrder": "type param",
+            "functionTypeSymbol": "*", // 参数没有类型时的默认值
             "customHasHeadEnd": {},
             "throttleTime": 60000 // 5分钟内不更新文件更新的时间
         }
@@ -496,5 +499,19 @@
     "gitlens.advanced.messages": {
         "suppressGitMissingWarning": true
     },
-    "editor.unicodeHighlight.invisibleCharacters": false
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.renderSideBySide": false,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ],
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    }
 }
