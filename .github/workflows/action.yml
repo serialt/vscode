@@ -36,11 +36,8 @@ jobs:
       - name: Build dockerfile (with push)
       # 构建镜像，然后推送到hub.docker.com
         run: |
-          fullCommit="${{ github.event.commits[0].id }}" && \
-          docker build \
-          --platform=linux/amd64 \
-          --file ./Dockerfile . \
-          --tag serialt/vscode:"${fullCommit: 0: 7}" && \ 
+          export fullCommit="${{ github.event.commits[0].id }}" && \
+          docker build -f ./Dockerfile . -t serialt/vscode:"${fullCommit: 0: 7}"
           docker tag serialt/vscode:"${fullCommit: 0: 7} serialt/vscode:latest && \ 
           docker push serialt/vscode:"${fullCommit: 0: 7} && \ 
           docker push serialt/vscode:latest
