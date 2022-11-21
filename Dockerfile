@@ -11,7 +11,7 @@ ENV SERVICE_URL="https://marketplace.visualstudio.com/_apis/public/gallery"
 ENV ITEM_URL="https://marketplace.visualstudio.com/items"
 
 # install base software
-RUN yum -y install cronie git pwgen python3 python3-devel vim-enhanced bash-completion net-tools bind-utils openssh-clients wget lftp && yum -y upgrade
+RUN yum -y install cronie git python3 python3-devel vim-enhanced bash-completion net-tools bind-utils openssh-clients wget lftp && yum -y upgrade
 
 # change yum repo to ustc
 RUN   sed -e 's|^mirrorlist=|#mirrorlist=|g' \
