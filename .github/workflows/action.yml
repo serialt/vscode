@@ -1,7 +1,6 @@
 name: sync
 
 on:
-  workflow_dispatch: #github页面手动触发
   push:
     branches:
       - master
