@@ -38,6 +38,6 @@ jobs:
         run: |
           export fullCommit="${{ github.event.commits[0].id }}" && \
           docker build -f ./Dockerfile . -t serialt/vscode:"${fullCommit: 0: 7}"
-          docker tag serialt/vscode:"${fullCommit: 0: 7} serialt/vscode:latest && \ 
-          docker push serialt/vscode:"${fullCommit: 0: 7} && \ 
+          docker tag serialt/vscode:"${fullCommit: 0: 7} serialt/vscode:latest 
+          docker push serialt/vscode:"${fullCommit: 0: 7} 
           docker push serialt/vscode:latest
