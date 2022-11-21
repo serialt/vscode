@@ -39,7 +39,7 @@ jobs:
           buildx-version: latest
 
       - name: Build dockerfile (with push)
-      # 构建镜像，ß然后推送到hub.docker.com
+      # 构建镜像，然后推送到hub.docker.com
         run: |
           fullCommit="${{ github.event.commits[0].id }}" && \
           docker build \

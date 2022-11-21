@@ -10,14 +10,8 @@
     "remote.SSH.connectTimeout": 15,
     // 启用后，扩展将本地下载并安装在远程上。
     "remote.downloadExtensionsLocally": true,
-    "remote.SSH.remotePlatform": {
-        "alma.imau.cc": "linux",
-        "www.imau.cc": "linux"
-    },
     "editor.tabCompletion": "on",
     "editor.guides.bracketPairs": true,
-    // "editor.fontLigatures": null,
-    "editor.experimental.stickyScroll.enabled": true,
     "editor.formatOnSave": true,
     "editor.tabSize": 4, // tab建空格数
     "editor.wordWrap": "off", // 不折行
@@ -35,7 +29,8 @@
         "*.yaml": "helm",
         "*.go": "go",
         "*.sh": "shellscript",
-        "Makfile": "makefile"
+        "Makfile": "makefile",
+        "Dockerfile": "dockerfile"
     },
     "files.exclude": { // 这些文件将不会显示在工作空间中
         "**/.git": true,
@@ -101,18 +96,6 @@
             }
         ]
     },
-    "python.pythonPath": "$workspaceRoot/venv/bin/python3",
-    "python.venvPath": "$workspaceRoot/venv",
-    "python.jediEnabled": true,
-    "python.autoComplete.addBrackets": true,
-    "python.linting.pycodestyleEnabled": true,
-    "python.testing.pytestArgs": [
-        "venv"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.nosetestsEnabled": false,
-    "python.testing.pytestEnabled": false,
-    "python.terminal.activateEnvironment": true,
     "go.testOnSave": true,
     "go.useCodeSnippetsOnFunctionSuggest": true,
     // 包查找模式
@@ -207,17 +190,23 @@
     },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "autopep8",
-    // Whether to lint Python files.
-    "python.formatting.autopep8Path": "autopep8",
-    "python.linting.enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=248"
+    "python.defaultInterpreterPath": "venv/bin/python3",
+    "python.pythonPath": "$workspaceRoot/venv/bin/python3",
+    "python.venvPath": "$workspaceRoot/venv",
+    "python.jediEnabled": true,
+    "python.autoComplete.addBrackets": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.testing.pytestArgs": [
+        "venv"
     ],
-    "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=pygame",
-        "--unsafe-load-any-extension=y"
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": false,
+    "python.terminal.activateEnvironment": true,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "yapf",
+    "python.linting.enabled": false,
+    "python.linting.flake8Args": [
+        "--ignore=E501"
     ],
     "python.linting.ignorePatterns": [
         "**/site-packages/**/*.py",
@@ -260,7 +249,6 @@
     "go.toolsManagement.autoUpdate": true,
     "terminal.integrated.tabs.enabled": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "python.defaultInterpreterPath": "venv/bin/python3",
     "workbench.colorTheme": "Mac Classic",
     // Kubernetes configuration
     "vs-kubernetes": {
@@ -324,7 +312,6 @@
         // "Version       ": "1.0",
         "Author        ": "serialt",
         "Email         ": "t@imau.cc",
-        "Github        ": "https://github.com/serialt",
         "Date": "Do not edit",
         "LastEditTime": "Do not edit",
         "FilePath": "Do not edit",
@@ -513,5 +500,8 @@
             "comments": false,
             "strings": true
         }
-    }
+    },
+    "editor.stickyScroll.enabled": true,
+    "git.suggestSmartCommit": false,
+    "diffEditor.maxComputationTime": 0
 }

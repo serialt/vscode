@@ -6,7 +6,7 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2022-08-17 16:40:29
+# Last modified : 2022-11-21 17:32:38
 # FilePath      : /vscode/build.sh
 # Other         :
 #               :
@@ -17,8 +17,8 @@
 #
 # ***********************************************************************
 
-export IMAU_GO_VERSION=1.19
-export IMAU_VSCODE_VERSION=4.5.2
+export IMAU_GO_VERSION=1.19.3
+export IMAU_VSCODE_VERSION=4.8.3
 export IMAU_DUMP_INIT=1.2.5
 
 setTrash() {
