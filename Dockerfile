@@ -10,16 +10,24 @@ LABEL mantainer="tserialt@gmail.com"
 ENV SERVICE_URL="https://marketplace.visualstudio.com/_apis/public/gallery"
 ENV ITEM_URL="https://marketplace.visualstudio.com/items"
 
-# change yum repo to huawei
-RUN sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.aliyun.com/rockylinux|g' \
-    -i.bak /etc/yum.repos.d/*.repo && yum -y install epel-release && sed -e "s|^metalink|#metalink|g" \
-    -e "s|^#baseurl=https://download.example/pub|baseurl=https://mirrors.aliyun.com/|g" \
-    -i.bak \
-    -i /etc/yum.repos.d/epel*.repo
-
 # install base software
 RUN yum -y install cronie git pwgen python3 python3-devel vim-enhanced bash-completion net-tools bind-utils openssh-clients wget lftp && yum -y upgrade
+
+# change yum repo to ustc
+RUN   sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/rocky|g' \
+    -i.bak \
+    /etc/yum.repos.d/rocky*.repo && \
+    yum -y install epel-release && \
+    sed -e 's|^metalink=|#metalink=|g' \
+    -e 's|^#baseurl=https\?://download.fedoraproject.org/pub/epel/|baseurl=https://mirrors.ustc.edu.cn/epel/|g' \
+    -e 's|^#baseurl=https\?://download.example/pub/epel/|baseurl=https://mirrors.ustc.edu.cn/epel/|g' \
+    -i.bak \
+    /etc/yum.repos.d/epel*.repo
+
+# yum upgrade
+RUN yum clean all && \
+    echo -en "alias ls='ls --color'\nalias ll='ls -l'\nalias lh='ls -lh' " >> ~/.bashrc 
 
 ADD run.sh /opt/
 ADD config.yaml /root/.config/code-server/config.yaml
