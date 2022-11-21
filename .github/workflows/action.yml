@@ -2,13 +2,10 @@ name: sync
 
 on:
   push:
-    branches:
-      - master
-      - main
     tags:
       - "v*.*"
-  schedule:
-    - cron: "30 5 * * 1"
+  # schedule:
+  #   - cron: "30 5 * * 1"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -25,7 +22,7 @@ jobs:
       - name: set-output
         id: set-output-id
         run: |
-          VERSION=edge
+          VERSION=rocky9
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
           fi
