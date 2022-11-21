@@ -32,11 +32,6 @@ jobs:
         # 指定login命令登录hub.docker.com
         run: |
           echo "${DOCKER_PASSWORD}" | docker login --username ${DOCKER_USERNAME} --password-stdin
-      - name: Set up Docker Buildx
-        # 使用buildx来构建镜像
-        uses: crazy-max/ghaction-docker-buildx@v1
-        with:
-          buildx-version: latest
 
       - name: Build dockerfile (with push)
       # 构建镜像，然后推送到hub.docker.com
