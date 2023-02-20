@@ -6,7 +6,7 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-02-20 21:36:24
+# Last modified : 2023-02-20 23:55:15
 # FilePath      : /vscode/build.sh
 # Other         :
 #               :
@@ -127,6 +127,8 @@ Install_extension() {
         mhutchie.git-graph
         mrmlnc.vscode-apache
         ms-azuretools.vscode-docker
+        ms-python.python
+        magicstack.MagicPython
         MS-CEINTL.vscode-language-pack-zh-hans
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-toolsai.jupyter
