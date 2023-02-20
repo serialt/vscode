@@ -6,9 +6,6 @@ FROM rockylinux:9
 
 LABEL mantainer="tserialt@gmail.com"
 
-# change marketplace to visualstudio
-ENV SERVICE_URL="https://marketplace.visualstudio.com/_apis/public/gallery"
-ENV ITEM_URL="https://marketplace.visualstudio.com/items"
 
 # install base software
 RUN yum -y install cronie git python3 python3-devel vim-enhanced procps-ng bash-completion net-tools bind-utils openssh-clients wget lftp && \ 
