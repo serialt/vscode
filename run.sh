@@ -1,4 +1,3 @@
-#!/bin/bash
 #!/usr/bin/env bash
 # ***********************************************************************
 # Description   : IMAU of Serialt
@@ -7,8 +6,8 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2022-02-17 16:35:35
-# FilePath      : /yaml/vscode-server/run.sh
+# Last modified : 2023-02-20 23:26:18
+# FilePath      : /vscode/run.sh
 # Other         : 
 #               : 
 # 

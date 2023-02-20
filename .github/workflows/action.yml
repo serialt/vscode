@@ -4,8 +4,8 @@ on:
   push:
     tags:
       - "v*.*"
-  # schedule:
-  #   - cron: "30 5 * * 1"
+  schedule:
+    - cron: "30 5 * * 1"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 

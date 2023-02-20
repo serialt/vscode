@@ -10,19 +10,7 @@ services:
       - "/usr/bin/docker-compose:/usr/bin/docker-compose"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "${HOME}/.ssh:${HOME}/.ssh"
-      # - "${HOME}/.config/code-server/config.yaml:/root/.config/code-server/config.yaml"
-      # - "${HOME}/.local/share/code-server/Machine/settings.json:/root/.local/share/code-server/Machine/settings.json"
       - "${HOME}/go/bin:${HOME}/go/bin"
       - "${HOME}/github:/root/github"
-      - "/yaml:/root/yaml"
     ports:
       - "127.0.0.1:8080:8080"
-      - "7000-7020:7000-7020"
-   deploy:
-     resources:
-        limits:
-           cpus: '1'
-           memory: 1G
-        reservations:
-           cpus: '0.5'
-           memory: 200M

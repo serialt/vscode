@@ -6,7 +6,7 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2022-11-21 18:25:56
+# Last modified : 2023-02-20 21:36:24
 # FilePath      : /vscode/build.sh
 # Other         :
 #               :
@@ -17,8 +17,8 @@
 #
 # ***********************************************************************
 
-export IMAU_GO_VERSION=1.19.3
-export IMAU_VSCODE_VERSION=4.8.3
+export IMAU_GO_VERSION=1.20.1
+export IMAU_VSCODE_VERSION=4.10.0
 export IMAU_DUMP_INIT=1.2.5
 
 setTrash() {
@@ -56,13 +56,6 @@ export PATH=\$PATH:\$GOROOT/bin:\$GOBIN/bin
 ### history configration
 UserIP=\$(who -u am i | cut -d"("  -f 2 | sed -e "s/[()]//g")
 export HISTTIMEFORMAT="[%F %T] [\`whoami\`] [\${UserIP}] "
-
-
-### istio configration
-export ISTIO_HOME=/usr/local/istio
-export PATH=\$PATH:\$ISTIO_HOME/bin
-
-
 
 #export  PS1="[\u@\h \W]\\$ "
 
