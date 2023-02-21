@@ -6,7 +6,7 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-02-20 23:55:15
+# Last modified : 2023-02-21 20:02:18
 # FilePath      : /vscode/build.sh
 # Other         :
 #               :
@@ -144,8 +144,9 @@ Install_extension() {
         vscode-icons-team.vscode-icons
         waderyan.gitblame
         wholroyd.jinja
-
+        
         yzhang.markdown-all-in-one
+        hashicorp.terraform
 
 
     )
