@@ -1,8 +1,9 @@
 version: "3"
 services:
   vscode:
-    image: serialt/vscode:latest
+    image: serialt/vscode:1.0.4
     container_name: vscode
+    hostname: vscode
     restart: always
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
@@ -10,7 +11,6 @@ services:
       - "/usr/bin/docker-compose:/usr/bin/docker-compose"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "${HOME}/.ssh:${HOME}/.ssh"
-      - "${HOME}/go/bin:${HOME}/go/bin"
       - "${HOME}/github:/root/github"
     ports:
       - "127.0.0.1:8080:8080"
