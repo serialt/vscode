@@ -6,7 +6,7 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-02-22 09:49:26
+# Last modified : 2023-02-22 12:58:10
 # FilePath      : /vscode/build.sh
 # Other         :
 #               :
@@ -104,7 +104,6 @@ Install_extension() {
     extension_list=(
         alefragnani.Bookmarks
         alefragnani.project-manager
-        alexcvzz.vscode-sqlite
         cheshirekow.cmake-format
         christian-kohler.path-intellisense
         ckolkman.vscode-postgres
@@ -119,7 +118,6 @@ Install_extension() {
         gitlab.gitlab-workflow
         golang.go
         gruntfuggly.todo-tree
-        Gruntfuggly.todo-tree
         ionutvmi.path-autocomplete
         ipedrazas.kubernetes-snippets
         matthewpi.caddyfile-support
@@ -134,8 +132,11 @@ Install_extension() {
         ms-toolsai.jupyter-renderers
         ms-vscode.cmake-tools
         mtxr.sqltools
+        mtxr.sqltools-driver-mysql
+        mtxr.sqltools-driver-pg
         njpwerner.autodocstring
         OBKoro1.korofileheader
+        rangav.vscode-thunder-client
         redhat.vscode-yaml
         Remisa.shellman
         twxs.cmake
@@ -145,6 +146,7 @@ Install_extension() {
         
         yzhang.markdown-all-in-one
         hashicorp.terraform
+
 
 
     )
