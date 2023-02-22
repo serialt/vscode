@@ -6,7 +6,7 @@
 # Email         : serialt@qq.com
 # Github        : https://github.com/serialt
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-02-21 20:02:18
+# Last modified : 2023-02-22 09:49:26
 # FilePath      : /vscode/build.sh
 # Other         :
 #               :
@@ -113,23 +113,21 @@ Install_extension() {
         dhoeric.ansible-vault
         donjayamanne.git-extension-pack
         donjayamanne.githistory
-        eamodio.gitlens
         felipecaputo.git-project-manager
         formulahendry.code-runner
-
         foxundermoon.shell-format
+        gitlab.gitlab-workflow
         golang.go
+        gruntfuggly.todo-tree
         Gruntfuggly.todo-tree
-        humao.rest-client
         ionutvmi.path-autocomplete
         ipedrazas.kubernetes-snippets
         matthewpi.caddyfile-support
         mhutchie.git-graph
         mrmlnc.vscode-apache
-        ms-azuretools.vscode-docker
         ms-python.python
+        ms-python.isort
         magicstack.MagicPython
-        MS-CEINTL.vscode-language-pack-zh-hans
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-toolsai.jupyter
         ms-toolsai.jupyter-keymap

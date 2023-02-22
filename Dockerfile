@@ -25,7 +25,8 @@ RUN   sed -e 's|^mirrorlist=|#mirrorlist=|g' \
     -i.bak \
     /etc/yum.repos.d/epel*.repo  && \
     yum clean all && \
-    echo -en "alias ls='ls --color'\nalias ll='ls -l'\nalias lh='ls -lh' " >> ~/.bashrc 
+    echo -en "alias ls='ls --color'\nalias ll='ls -l'\nalias lh='ls -lh' " >> ~/.bashrc  && \
+    ln -snf /opt/code-server/bin/code-server /usr/local/bin/code
 
 
 # # yum upgrade
