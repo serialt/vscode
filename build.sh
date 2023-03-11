@@ -1,24 +1,20 @@
 #!/usr/bin/env bash
 # ***********************************************************************
-# Description   : IMAU of Serialt
-# Version       : 1.0
+# Description   : Blue Planet
 # Author        : serialt
-# Email         : serialt@qq.com
-# Github        : https://github.com/serialt
+# Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-02-22 12:58:10
+# Last modified : 2023-03-11 12:40:37
 # FilePath      : /vscode/build.sh
-# Other         :
-#               :
-#
-#
-#                 人和代码，有一个能跑就行
-#
-#
+# Other         : 
+#               : 
+# 
+# 
+# 
 # ***********************************************************************
 
-export IMAU_GO_VERSION=1.20.1
-export IMAU_VSCODE_VERSION=4.10.0
+export IMAU_GO_VERSION=1.20.2
+export IMAU_VSCODE_VERSION=4.10.1
 export IMAU_DUMP_INIT=1.2.5
 
 setTrash() {
@@ -115,7 +111,7 @@ Install_extension() {
         felipecaputo.git-project-manager
         formulahendry.code-runner
         foxundermoon.shell-format
-        gitlab.gitlab-workflow
+        # gitlab.gitlab-workflow
         golang.go
         gruntfuggly.todo-tree
         ionutvmi.path-autocomplete
@@ -131,9 +127,9 @@ Install_extension() {
         ms-toolsai.jupyter-keymap
         ms-toolsai.jupyter-renderers
         ms-vscode.cmake-tools
-        mtxr.sqltools
-        mtxr.sqltools-driver-mysql
-        mtxr.sqltools-driver-pg
+        # mtxr.sqltools
+        # mtxr.sqltools-driver-mysql
+        # mtxr.sqltools-driver-pg
         njpwerner.autodocstring
         OBKoro1.korofileheader
         rangav.vscode-thunder-client

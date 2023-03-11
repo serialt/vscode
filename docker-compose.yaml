@@ -1,7 +1,7 @@
 version: "3"
 services:
   vscode:
-    image: serialt/vscode:1.0.4
+    image: serialt/vscode:1.0.6
     container_name: vscode
     hostname: vscode
     restart: always

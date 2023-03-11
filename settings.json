@@ -4,12 +4,12 @@
     "remote.SSH.localServerDownload": "auto",
     "remote.SSH.showLoginTerminal": true,
     "remote.SSH.useLocalServer": false,
-    "remote.SSH.enableAzureIntegration": true,
     "remote.SSH.lockfilesInTmp": true,
     // ssh超时连接
     "remote.SSH.connectTimeout": 15,
     // 启用后，扩展将本地下载并安装在远程上。
     "remote.downloadExtensionsLocally": true,
+    "remote.SSH.remotePlatform": {},
     "editor.tabCompletion": "on",
     "editor.guides.bracketPairs": true,
     "editor.formatOnSave": true,
@@ -30,7 +30,8 @@
         "*.go": "go",
         "*.sh": "shellscript",
         "Makfile": "makefile",
-        "Dockerfile": "dockerfile"
+        "Dockerfile": "dockerfile",
+        "*.tf": "terraform"
     },
     "files.exclude": { // 这些文件将不会显示在工作空间中
         "**/.git": true,
@@ -136,7 +137,6 @@
         "-unimported-packages"
     ],
     "go.enableCodeLens": {
-        "references": true,
         "runtest": true
     },
     "go.delveConfig": {
@@ -190,7 +190,7 @@
     },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.defaultInterpreterPath": "venv/bin/python3",
+    "python.defaultInterpreterPath": "$workspaceRoot/venv/bin/python3",
     "python.pythonPath": "$workspaceRoot/venv/bin/python3",
     "python.venvPath": "$workspaceRoot/venv",
     "python.jediEnabled": true,
@@ -276,10 +276,6 @@
     "vscode-kubernetes.kubectl-path.linux": "",
     "vscode-kubernetes.kubectl-path.mac": "",
     "vscode-kubernetes.kubectl-path.windows": "",
-    "vscode-kubernetes.minikube-path": "",
-    "vscode-kubernetes.minikube-path.linux": "",
-    "vscode-kubernetes.minikube-path.mac": "",
-    "vscode-kubernetes.minikube-path.windows": "",
     "code-runner.executorMap": {
         "javascript": "node",
         "python": "cd $workspaceRoot && venv/bin/python3  $fileName",
@@ -290,7 +286,7 @@
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
     // Set the working directory.
-    "code-runner.cwd": "",
+    "code-runner.cwd": "$workspaceRoot",
     "code-runner.saveAllFilesBeforeRun": true,
     "code-runner.clearPreviousOutput": true,
     "code-runner.runInTerminal": true,
@@ -308,16 +304,16 @@
     "sync.autoUpload": false,
     "workbench.editor.enablePreview": false,
     "fileheader.customMade": {
-        "Description   ": "IMAU of Serialt",
+        "Description   ": "Blue Planet",
         // "Version       ": "1.0",
         "Author        ": "serialt",
-        "Email         ": "t@imau.cc",
+        "Email         ": "tserialt@gmail.com",
         "Date": "Do not edit",
         "LastEditTime": "Do not edit",
         "FilePath": "Do not edit",
         "Other         ": "",
         "              ": "",
-        "custom_string_obkoro1": "\n                人和代码，有一个能跑就行\n"
+        "custom_string_obkoro1": "\n\n"
     },
     //函数注释
     "fileheader.cursorMode": {
@@ -461,7 +457,6 @@
             "throttleTime": 60000 // 5分钟内不更新文件更新的时间
         }
     },
-    "tabnine.experimentalAutoImports": true,
     // 更新设置
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
@@ -483,18 +478,12 @@
     // 如果设置成'true'，插件会自动使用官方 TS 图标
     "vsicons.presets.tsOfficial": true,
     "workbench.iconTheme": "vscode-icons",
-    "gitlens.advanced.messages": {
-        "suppressGitMissingWarning": true
-    },
     "editor.unicodeHighlight.invisibleCharacters": false,
     "diffEditor.renderSideBySide": false,
     "[yaml]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
         "editor.autoIndent": "keep",
-        "gitlens.codeLens.scopes": [
-            "document"
-        ],
         "editor.quickSuggestions": {
             "other": true,
             "comments": false,
@@ -503,5 +492,39 @@
     },
     "editor.stickyScroll.enabled": true,
     "git.suggestSmartCommit": false,
-    "diffEditor.maxComputationTime": 0
+    "diffEditor.maxComputationTime": 0,
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch Package",
+                "type": "go",
+                "request": "launch",
+                "mode": "auto",
+                "env": {},
+                "envFile": "${workspaceFolder}/.env",
+                "program": "${workspaceFolder}/cmd/",
+                "cwd": "${workspaceFolder}",
+                "args": [
+                    "-c",
+                    "${workspaceFolder}/config.yaml"
+                ]
+            },
+            {
+                "name": "Python",
+                "type": "python",
+                "request": "launch",
+                "stopOnEntry": false,
+                "program": "${file}",
+                "cwd": "${workspaceFolder}",
+                "python": "${workspaceFolder}/venv/bin/python3",
+                "env": {},
+                "envFile": "${workspaceFolder}/.env",
+                "args": [
+                    // "-c",
+                    // "${workspaceFolder}/config.yaml"
+                ]
+            }
+        ]
+    }
 }

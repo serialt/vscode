@@ -8,7 +8,7 @@ LABEL mantainer="tserialt@gmail.com"
 
 
 # install base software
-RUN yum -y install cronie git python3 python3-devel vim-enhanced iputils traceroute procps-ng bash-completion net-tools bind-utils openssh-clients wget lftp && \ 
+RUN yum -y install cronie make git python3 python3-devel vim-enhanced iputils traceroute procps-ng bash-completion net-tools bind-utils openssh-clients wget && \ 
     yum -y upgrade && \
     yum clean all 
 
