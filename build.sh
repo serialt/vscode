@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-03-25 00:50:26
+# Last modified : 2023-03-25 01:03:10
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -104,7 +104,6 @@ Install_extension() {
         766b.go-outliner
         alefragnani.Bookmarks
         alefragnani.project-manager
-        aykutsarac.jsoncrack-vscode
         cheshirekow.cmake-format
         christian-kohler.path-intellisense
         ckolkman.vscode-postgres
@@ -134,9 +133,6 @@ Install_extension() {
         mhutchie.git-graph
         mrmlnc.vscode-apache
         ms-python.python
-        ms-python.isort
-        magicstack.MagicPython
-        mkhl.shfmt
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-toolsai.jupyter
         # ms-toolsai.jupyter-keymap
@@ -164,10 +160,6 @@ Install_extension() {
         xmtt.go-mod-grapher
         yzhang.markdown-all-in-one
         zainchen.json
-        zamerick.vscode-caddyfile-syntax
-        zbr.vscode-ansible
-
-
 
     )
 
@@ -176,6 +168,8 @@ Install_extension() {
         extName=${arr[0]}
         /opt/code-server/bin/code-server --install-extension ${extName}
     done
+    sleep 5
 }
 
 InstallDEV_ENV
+exit 0
