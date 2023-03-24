@@ -20,7 +20,7 @@ env:
   APP_REPO: https://github.com/coder/code-server.git
 
 jobs:
-  get-tags:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -65,7 +65,7 @@ jobs:
           done
       - name: Push changes
         uses: ad-m/github-push-action@master
-        if: ${{ steps.build_kubeadm.outputs.ADD_TAG != '' }}
+        if: ${{ steps.get_tag.outputs.ADD_TAG != '' }}
         with:
           ssh: true
           branch: ${{ github.ref }}
