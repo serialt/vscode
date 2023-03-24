@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-03-11 12:40:37
+# Last modified : 2023-03-25 00:50:26
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -92,56 +92,80 @@ InstallDEV_ENV() {
         mv /tmp/code-server-${IMAU_VSCODE_VERSION}-linux-amd64 /opt/code-server
         wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v${IMAU_DUMP_INIT}/dumb-init_${IMAU_DUMP_INIT}_x86_64
         chmod +x /usr/local/bin/dumb-init
-        Install_extension
+        config_A=$(cat /opt/code-server/lib/vscode/product.json)
+        config_B=$(cat /opt/vscode-marketplace.json )
+        echo ${config_A} ${config_B} | jq -s add > /opt/code-server/lib/vscode/product.json
+        Install_extension 
     fi
 }
 
 Install_extension() {
     extension_list=(
+        766b.go-outliner
         alefragnani.Bookmarks
         alefragnani.project-manager
+        aykutsarac.jsoncrack-vscode
         cheshirekow.cmake-format
         christian-kohler.path-intellisense
         ckolkman.vscode-postgres
         codezombiech.gitignore
         cweijan.vscode-office
+        cweijan.vscode-typora
         dhoeric.ansible-vault
         donjayamanne.git-extension-pack
         donjayamanne.githistory
+        dunn.redis
+        editorconfig.editorconfig
         felipecaputo.git-project-manager
         formulahendry.code-runner
         foxundermoon.shell-format
         # gitlab.gitlab-workflow
         golang.go
         gruntfuggly.todo-tree
+        hashicorp.hcl
+        hashicorp.terraform
+        howardzuo.vscode-git-tags
         ionutvmi.path-autocomplete
         ipedrazas.kubernetes-snippets
+        jeff-hykin.better-dockerfile-syntax
+        lunuan.kubernetes-templates
         matthewpi.caddyfile-support
+        mgesbert.python-path
         mhutchie.git-graph
         mrmlnc.vscode-apache
         ms-python.python
         ms-python.isort
         magicstack.MagicPython
+        mkhl.shfmt
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-toolsai.jupyter
-        ms-toolsai.jupyter-keymap
-        ms-toolsai.jupyter-renderers
+        # ms-toolsai.jupyter-keymap
+        # ms-toolsai.jupyter-renderers
         ms-vscode.cmake-tools
         # mtxr.sqltools
         # mtxr.sqltools-driver-mysql
         # mtxr.sqltools-driver-pg
-        njpwerner.autodocstring
+        nkjoep.mac-classic-theme
         OBKoro1.korofileheader
+        pascalreitermann93.vscode-yaml-sort
+        patrickfalknielsen.git-tag-push
         rangav.vscode-thunder-client
+        redhat.ansible
         redhat.vscode-yaml
+        sandipchitale.vscode-kubernetes-helm-extras
+        shaharkazaz.git-merger
+        technosophos.vscode-helm
+        tim-koehler.helm-intellisense
         Remisa.shellman
         twxs.cmake
         vscode-icons-team.vscode-icons
         waderyan.gitblame
         wholroyd.jinja
-        
+        xmtt.go-mod-grapher
         yzhang.markdown-all-in-one
-        hashicorp.terraform
+        zainchen.json
+        zamerick.vscode-caddyfile-syntax
+        zbr.vscode-ansible
 
 
 

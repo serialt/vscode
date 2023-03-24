@@ -8,7 +8,7 @@ LABEL mantainer="tserialt@gmail.com"
 
 
 # install base software
-RUN yum -y install cronie make git python3 python3-devel vim-enhanced iputils traceroute procps-ng bash-completion net-tools bind-utils openssh-clients wget && \ 
+RUN yum -y install cronie make git python3 python3-devel vim-enhanced iputils traceroute procps-ng bash-completion net-tools bind-utils openssh-clients wget jq && \ 
     yum -y upgrade && \
     yum clean all 
 
@@ -37,6 +37,7 @@ ADD run.sh /opt/
 ADD config.yaml /root/.config/code-server/config.yaml
 ADD settings.json /root/.local/share/code-server/Machine/settings.json
 ADD build.sh /opt/
+ADD vscode-marketplace.json /opt/
 RUN bash /opt/build.sh && yum clean all
 
 
