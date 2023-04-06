@@ -13,8 +13,8 @@
 # 
 # ***********************************************************************
 
-export IMAU_GO_VERSION=1.20.2
-export IMAU_VSCODE_VERSION=3.10.2
+export IMAU_GO_VERSION=1.20.3
+export IMAU_VSCODE_VERSION=4.11.0
 export IMAU_DUMP_INIT=1.2.5
 
 setTrash() {
