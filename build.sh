@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-03-25 01:03:10
+# Last modified : 2023-04-06 16:56:21
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -16,6 +16,7 @@
 export IMAU_GO_VERSION=1.20.3
 export IMAU_VSCODE_VERSION=4.11.0
 export IMAU_DUMP_INIT=1.2.5
+export GO_SDK_DIR=/root/sdk
 
 setTrash() {
     trash_path="/tmp/.trash"
@@ -43,7 +44,7 @@ EOF
 setENV() {
     cat >/etc/profile.d/serialt2.sh <<EOF
 ### golang configration
-export GOROOT=/usr/local/go
+export GOROOT=${GO_SDK_DIR}/go
 export GOPROXY=https://goproxy.cn,direct
 export GOPATH=~/go
 export GOBIN=\$GOPATH
@@ -80,11 +81,11 @@ EOF
 InstallDEV_ENV() {
     if [[ ! -f /etc/profile.d/serialt.sh ]]; then
         setENV
-
+        [ ! -d ${GO_SDK_DIR} ] && mkdir ${GO_SDK_DIR}
         setTrash
         cd /tmp/
         wget https://go.dev/dl/go${IMAU_GO_VERSION}.linux-amd64.tar.gz
-        tar -xf go*.tar.gz -C /usr/local
+        tar -xf go*.tar.gz -C ${GO_SDK_DIR}
         rm -rf  go*.tar.gz
         wget https://github.com/coder/code-server/releases/download/v${IMAU_VSCODE_VERSION}/code-server-${IMAU_VSCODE_VERSION}-linux-amd64.tar.gz
         tar -xf code-server*.tar.gz
@@ -173,3 +174,4 @@ Install_extension() {
 
 InstallDEV_ENV
 exit 0
+
