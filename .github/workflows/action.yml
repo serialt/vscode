@@ -51,7 +51,7 @@ jobs:
               
               echo "::debug::[Push file]"
               echo "${t}" >> version.txt
-              fix_tag=$(echo v3.10.2 | awk -F 'v' '{print $2}')
+              fix_tag=$(echo ${t} | awk -F 'v' '{print $2}')
               sed -i "/export IMAU_VSCODE_VERSION/c \export IMAU_VSCODE_VERSION=${fix_tag}" build.sh
               git config --global user.email "tserialt@gmail.com"
               git config --global user.name "serialt"
