@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-04-06 16:56:21
+# Last modified : 2023-04-08 09:26:22
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -47,8 +47,8 @@ setENV() {
 export GOROOT=${GO_SDK_DIR}/go
 export GOPROXY=https://goproxy.cn,direct
 export GOPATH=~/go
-export GOBIN=\$GOPATH
-export PATH=\$PATH:\$GOROOT/bin:\$GOBIN/bin
+export GOBIN=\$GOPATH/bin
+export PATH=\$PATH:\$GOROOT/bin:\$GOBIN
 
 ### history configration
 UserIP=\$(who -u am i | cut -d"("  -f 2 | sed -e "s/[()]//g")
@@ -107,7 +107,7 @@ Install_extension() {
         alefragnani.project-manager
         cheshirekow.cmake-format
         christian-kohler.path-intellisense
-        ckolkman.vscode-postgres
+        # ckolkman.vscode-postgres
         codezombiech.gitignore
         cweijan.vscode-office
         cweijan.vscode-typora
@@ -122,6 +122,7 @@ Install_extension() {
         # gitlab.gitlab-workflow
         golang.go
         gruntfuggly.todo-tree
+        huizhou.githd
         hashicorp.hcl
         hashicorp.terraform
         howardzuo.vscode-git-tags
@@ -153,7 +154,7 @@ Install_extension() {
         shaharkazaz.git-merger
         technosophos.vscode-helm
         tim-koehler.helm-intellisense
-        Remisa.shellman
+        # Remisa.shellman
         twxs.cmake
         vscode-icons-team.vscode-icons
         waderyan.gitblame
