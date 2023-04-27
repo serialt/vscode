@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-04-08 09:26:22
+# Last modified : 2023-04-27 13:15:46
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -112,20 +112,17 @@ Install_extension() {
         cweijan.vscode-office
         cweijan.vscode-typora
         dhoeric.ansible-vault
-        donjayamanne.git-extension-pack
         donjayamanne.githistory
-        dunn.redis
-        editorconfig.editorconfig
         felipecaputo.git-project-manager
         formulahendry.code-runner
-        foxundermoon.shell-format
+        fredwangwang.vscode-hcl-format
         # gitlab.gitlab-workflow
         golang.go
         gruntfuggly.todo-tree
-        huizhou.githd
         hashicorp.hcl
         hashicorp.terraform
         howardzuo.vscode-git-tags
+        huizhou.githd
         ionutvmi.path-autocomplete
         ipedrazas.kubernetes-snippets
         jeff-hykin.better-dockerfile-syntax
@@ -137,25 +134,17 @@ Install_extension() {
         ms-python.python
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-toolsai.jupyter
-        # ms-toolsai.jupyter-keymap
-        # ms-toolsai.jupyter-renderers
         ms-vscode.cmake-tools
-        # mtxr.sqltools
-        # mtxr.sqltools-driver-mysql
-        # mtxr.sqltools-driver-pg
-        nkjoep.mac-classic-theme
         OBKoro1.korofileheader
         pascalreitermann93.vscode-yaml-sort
         patrickfalknielsen.git-tag-push
         rangav.vscode-thunder-client
         redhat.ansible
         redhat.vscode-yaml
+        redjue.git-commit-plugin
         sandipchitale.vscode-kubernetes-helm-extras
         shaharkazaz.git-merger
-        technosophos.vscode-helm
         tim-koehler.helm-intellisense
-        # Remisa.shellman
-        twxs.cmake
         vscode-icons-team.vscode-icons
         waderyan.gitblame
         wholroyd.jinja
