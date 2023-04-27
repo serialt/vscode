@@ -1,0 +1,70 @@
+[user]
+    name = serialt
+    email = tserialt@gmail.com 
+
+#[includeIf "gitdir:~/github/"]
+#  path = ~/github/.gitconfig
+
+
+[init]
+    defaultBranch = main
+
+[color]
+        ui = true
+        
+[alias]
+    # status
+    st  = status
+    ss = status --short --branch
+    # stash
+    sh  = stash
+    shp = stash pop
+    shl = stash list
+    shs = stash save
+    sha = stash apply
+    std = stash drop
+    # branch
+    br  = branch
+    bra = branch -a
+    brm = branch -m
+    co  = checkout
+    cob = checkout -b
+    sw  = switch
+    swc = switch -c
+    
+    # remote
+    ra  = remote add
+    rao = remote add origin
+    ru  = remote set-url
+    ruo = remote set-url origin
+    rv = remote -v
+    # fetch
+    fe  = fetch
+    fep = fetch -p
+    fo  = fetch origin
+    fop = fetch origin -p
+    # merge
+    mr  = merge
+    mnc = merge --no-commit
+    # msq = merge --squash
+
+    # commit
+    cm = commit -m
+    # config user and mail
+    user = config user.name
+    mail = config user.email
+
+[core]
+    excludesfile = ~/.gitignore_global
+    autocrlf = input
+    quotepath = false
+    ignorecase = false
+    editor = vim
+
+[i18n "commit"]
+    encoding = utf-8
+[i18n]
+    logoutputencoding = utf-8
+
+# [http "https://github.com"]
+#     proxy = socks5://127.0.0.1:5888
