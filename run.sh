@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-04-29 22:54:39
+# Last modified : 2023-04-29 23:14:34
 # FilePath      : /vscode/run.sh
 # Other         : 
 #               : 
@@ -28,7 +28,7 @@
 ARGS="--auth password "
 
 # Set password hashed with argon2
-[ ! -z ${CS_HASHED_PASSWORD} ] && ARGS="${ARGS} --password ${CS_HASHED_PASSWORD} "
+[ ! -z ${CS_HASHED_PASSWORD} ] && export HASHED_PASSWORD=${CS_HASHED_PASSWORD}
 
 #  Disable update check. Without this flag, code-server checks every 6 hours
 if [ ! -z ${CS_DISABLE_UPDATE_CHECK} ] && [ ${CS_DISABLE_UPDATE_CHECK} == true ] ;then 
