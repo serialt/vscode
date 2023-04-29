@@ -34,7 +34,6 @@ RUN   sed -e 's|^mirrorlist=|#mirrorlist=|g' \
 #     echo -en "alias ls='ls --color'\nalias ll='ls -l'\nalias lh='ls -lh' " >> ~/.bashrc 
 
 ADD run.sh /opt/
-ADD config.yaml /root/.config/code-server/config.yaml
 ADD settings.json /root/.local/share/code-server/Machine/settings.json
 ADD build.sh /opt/
 ADD vscode-marketplace.json /opt/
@@ -47,6 +46,6 @@ ENV TZ="Asia/Shanghai"
 
 WORKDIR /root
 
-EXPOSE 8080
+EXPOSE 80
 
-ENTRYPOINT ["/opt/run.sh","--bind-addr","0.0.0.0:8080"]
+ENTRYPOINT ["/opt/run.sh"]

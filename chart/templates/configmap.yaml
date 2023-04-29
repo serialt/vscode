@@ -5,5 +5,4 @@ metadata:
   labels:
     {{- include "vscode.labels" . | nindent 4 }}
 data:
-  config.yaml: |
-    {{- toYaml .Values.config | nindent 4 }}
+  {{- toYaml .Values.config | nindent 2 }}

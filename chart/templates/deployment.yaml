@@ -47,20 +47,23 @@ spec:
             {{- toYaml ( .Values.readinessProbe | default .Values.livenessProbe ) | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeMounts:
-            - name: config
-              mountPath: "/root/.config/code-server/config.yaml"
-              subPath: config.yaml
-              readOnly: true
-            # - name: data-bak
-            #   mountPath: "/data/bak"
-      volumes:
-        - name: config
-          configMap:
-            name: {{ include "vscode.fullname" . }}
-            items:
-              - key: "config.yaml"
-                path: "config.yaml"
+          # volumeMounts:
+          #   - name: config
+          #     mountPath: "/root/.config/code-server/config.yaml"
+          #     subPath: config.yaml
+          #     readOnly: true
+          #   - name: data-bak
+          #     mountPath: "/data/bak"
+          envFrom:
+            - configMapRef:
+                name: {{ include "vscode.fullname" . }}
+      # volumes:
+      #   - name: config
+      #     configMap:
+      #       name: {{ include "vscode.fullname" . }}
+      #       items:
+      #         - key: "config.yaml"
+      #           path: "config.yaml"
         # - name: config
         #   configMap:
         #     name: {{ include "vscode.fullname" . }}
