@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-04-08 09:26:22
+# Last modified : 2023-04-12 19:11:59
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -33,7 +33,7 @@ for i in \$*; do
 done
 EOF
     grep 'remove.sh' /etc/bashrc &>/dev/null
-    [[ $? != 0 ]] && echo 'alias rm="bash /usr/local/bin/remove.sh"' >>/etc/bashrc
+    [[ $? != 0 ]] && echo 'alias rm="bash /usr/local/bin/remove.sh"' >>/etc/bashrc && echo 'alias rm="bash /usr/local/bin/remove.sh"' >> /root/.bashrc 
     (
         crontab -l
         echo "${crontab_job}"
