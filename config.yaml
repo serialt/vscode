@@ -1,0 +1,2 @@
+auth: password
+hashed-password: $argon2i$v=19$m=4096,t=3,p=1$ndQZbJFPeeuSm8wbq8k8Mg$W1C5cXmuSoQD8f/vJQyujytoZEoG5DdJN1c8LUH9Ldo
