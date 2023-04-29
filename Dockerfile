@@ -38,6 +38,7 @@ ADD config.yaml /root/.config/code-server/config.yaml
 ADD settings.json /root/.local/share/code-server/Machine/settings.json
 ADD build.sh /opt/
 ADD vscode-marketplace.json /opt/
+ADD gitconfig /root/.gitconfig
 RUN bash /opt/build.sh && yum clean all
 
 

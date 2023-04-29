@@ -1,0 +1,123 @@
+# Default values for vscode.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  mirror: docker.io/serialt
+  name: vscode
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "v4.12.0"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 10 # 初始延迟探测时间
+  periodSeconds: 10        # 探测周期，默认 5 秒
+  timeoutSeconds: 3       # 超时，默认 1 秒
+  failureThreshold: 3     # 当探测失败时的重试次数，默认值为 3
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 10 # 初始延迟探测时间
+  periodSeconds: 10        # 探测周期，默认 5 秒
+  timeoutSeconds: 3       # 超时，默认 1 秒
+  failureThreshold: 3     # 当探测失败时的重试次数，默认值为 3
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+# 指定运行节点
+nodeSelector: {}
+  # kubernetes.io/arch=amd64
+  # kubernetes.io/hostname: master-01
+
+# 允许在master节点上
+tolerations: []
+  # - effect: NoSchedule
+  #   key: node-role.kubernetes.io/master
+  #   operator: Exists
+  # - effect: NoSchedule
+  #   key: node-role.kubernetes.io/control-plane
+  #   operator: Exists
+
+affinity: {}
+
+virtualService:
+  enabled: false
+  istioNamespace: 
+  istioGateways: []
+  domainNames: []
+
+config:
+  bind-addr: ":{{ .Values.service.port }}"
+  auth: password
+  hashed-password: $argon2i$v=19$m=4096,t=3,p=1$ndQZbJFPeeuSm8wbq8k8Mg$W1C5cXmuSoQD8f/vJQyujytoZEoG5DdJN1c8LUH9Ldo
+  cert: false
