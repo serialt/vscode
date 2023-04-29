@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-04-29 18:22:38
+# Last modified : 2023-04-29 22:56:42
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -29,11 +29,11 @@ TRASH_DIR=${trash_path}
 for i in \$*; do
     STAMP=\`date "+%Y%m%d%H%M%S"\`
     fileName=\`basename \$i\`
-    mv \$i \$TRASH_DIR/\$STAMP.\$fileName
+    mv \$i \$TRASH_DIR/\$fileName.\$STAMP
 done
 EOF
     grep 'remove.sh' /etc/bashrc &>/dev/null
-    [[ $? != 0 ]] && echo 'alias rm="bash /usr/local/bin/remove.sh"' >>/etc/bashrc && echo 'alias rm="bash /usr/local/bin/remove.sh"' >> /root/.bashrc 
+    [[ $? != 0 ]] && echo 'alias rm="bash /usr/local/bin/remove.sh"' >>/etc/bashrc && echo -e '\nalias rm="bash /usr/local/bin/remove.sh"' >> /root/.bashrc 
     (
         crontab -l
         echo "${crontab_job}"
