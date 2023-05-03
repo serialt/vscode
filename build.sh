@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-04-29 22:56:42
+# Last modified : 2023-05-03 18:09:34
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -17,6 +17,11 @@ export IMAU_GO_VERSION=1.20.3
 export IMAU_VSCODE_VERSION=4.12.0
 export IMAU_DUMP_INIT=1.2.5
 export GO_SDK_DIR=/root/sdk
+
+export CODE_ARCH=amd64
+
+[ $(arch) != "x86_64" ] && export CODE_ARCH=arm64
+
 
 setTrash() {
     trash_path="/tmp/.trash"
@@ -87,11 +92,11 @@ InstallDEV_ENV() {
         wget https://go.dev/dl/go${IMAU_GO_VERSION}.linux-amd64.tar.gz
         tar -xf go*.tar.gz -C ${GO_SDK_DIR}
         rm -rf  go*.tar.gz
-        wget https://github.com/coder/code-server/releases/download/v${IMAU_VSCODE_VERSION}/code-server-${IMAU_VSCODE_VERSION}-linux-amd64.tar.gz
+        wget https://github.com/coder/code-server/releases/download/v${IMAU_VSCODE_VERSION}/code-server-${IMAU_VSCODE_VERSION}-linux-${CODE_ARCH}.tar.gz
         tar -xf code-server*.tar.gz
         rm -rf code-server*.tar.gz
         mv /tmp/code-server-${IMAU_VSCODE_VERSION}-linux-amd64 /opt/code-server
-        wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v${IMAU_DUMP_INIT}/dumb-init_${IMAU_DUMP_INIT}_x86_64
+        wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v${IMAU_DUMP_INIT}/dumb-init_${IMAU_DUMP_INIT}_$(arch)
         chmod +x /usr/local/bin/dumb-init
         config_A=$(cat /opt/code-server/lib/vscode/product.json)
         config_B=$(cat /opt/vscode-marketplace.json )
