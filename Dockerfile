@@ -1,14 +1,10 @@
-# DOCKER-VERSION    0.2.1
-#
-# Dockerizing CentOS7: Dockerfile for building CentOS images
-#
 FROM rockylinux:9
 
 LABEL mantainer="tserialt@gmail.com"
 
 
 # install base software
-RUN yum -y install cronie make git python3 python3-devel vim-enhanced iputils traceroute procps-ng bash-completion net-tools bind-utils openssh-clients wget jq && \ 
+RUN yum -y install make git vim iputils traceroute procps-ng bash-completion iproute bind-utils wget jq && \ 
     yum -y upgrade && \
     yum clean all 
 

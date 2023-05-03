@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-05-03 18:35:39
+# Last modified : 2023-05-03 20:44:23
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -25,7 +25,7 @@ export CODE_ARCH=amd64
 
 setTrash() {
     trash_path="/tmp/.trash"
-    crontab_job="0 0 * * 0 rm -rf /tmp/.trash/*"
+    # crontab_job="0 0 * * 0 rm -rf /tmp/.trash/*"
     cat >/usr/local/bin/remove.sh <<EOF
 #!/bin/bash
 TRASH_DIR=${trash_path}
@@ -39,10 +39,10 @@ done
 EOF
     grep 'remove.sh' /etc/bashrc &>/dev/null
     [[ $? != 0 ]] && echo 'alias rm="bash /usr/local/bin/remove.sh"' >>/etc/bashrc && echo -e '\nalias rm="bash /usr/local/bin/remove.sh"' >> /root/.bashrc 
-    (
-        crontab -l
-        echo "${crontab_job}"
-    ) | crontab
+    # (
+    #     crontab -l
+    #     echo "${crontab_job}"
+    # ) | crontab
     source /etc/bashrc
 }
 
@@ -56,8 +56,7 @@ export GOBIN=\$GOPATH/bin
 export PATH=\$PATH:\$GOROOT/bin:\$GOBIN
 
 ### history configration
-UserIP=\$(who -u am i | cut -d"("  -f 2 | sed -e "s/[()]//g")
-export HISTTIMEFORMAT="[%F %T] [\`whoami\`] [\${UserIP}] "
+export HISTTIMEFORMAT="[%F %T] [\`whoami\`] "
 
 #export  PS1="[\u@\h \W]\\$ "
 
