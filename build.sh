@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-05-03 18:09:34
+# Last modified : 2023-05-03 18:35:39
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -89,13 +89,13 @@ InstallDEV_ENV() {
         [ ! -d ${GO_SDK_DIR} ] && mkdir ${GO_SDK_DIR}
         setTrash
         cd /tmp/
-        wget https://go.dev/dl/go${IMAU_GO_VERSION}.linux-amd64.tar.gz
+        wget https://go.dev/dl/go${IMAU_GO_VERSION}.linux-${CODE_ARCH}.tar.gz
         tar -xf go*.tar.gz -C ${GO_SDK_DIR}
         rm -rf  go*.tar.gz
         wget https://github.com/coder/code-server/releases/download/v${IMAU_VSCODE_VERSION}/code-server-${IMAU_VSCODE_VERSION}-linux-${CODE_ARCH}.tar.gz
         tar -xf code-server*.tar.gz
         rm -rf code-server*.tar.gz
-        mv /tmp/code-server-${IMAU_VSCODE_VERSION}-linux-amd64 /opt/code-server
+        mv /tmp/code-server-${IMAU_VSCODE_VERSION}-linux-${CODE_ARCH} /opt/code-server
         wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v${IMAU_DUMP_INIT}/dumb-init_${IMAU_DUMP_INIT}_$(arch)
         chmod +x /usr/local/bin/dumb-init
         config_A=$(cat /opt/code-server/lib/vscode/product.json)
