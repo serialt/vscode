@@ -14,7 +14,7 @@
 # ***********************************************************************
 
 export IMAU_GO_VERSION=1.20.4
-export IMAU_VSCODE_VERSION=4.12.0
+export IMAU_VSCODE_VERSION=4.13.0
 export IMAU_DUMP_INIT=1.2.5
 export GO_SDK_DIR=/root/sdk
 
