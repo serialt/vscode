@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-05-03 20:44:23
+# Last modified : 2023-05-21 11:50:32
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -13,7 +13,7 @@
 # 
 # ***********************************************************************
 
-export IMAU_GO_VERSION=1.20.3
+export IMAU_GO_VERSION=1.20.4
 export IMAU_VSCODE_VERSION=4.12.0
 export IMAU_DUMP_INIT=1.2.5
 export GO_SDK_DIR=/root/sdk
