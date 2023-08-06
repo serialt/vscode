@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-06-18 18:49:32
+# Last modified : 2023-08-07 06:16:08
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -13,14 +13,30 @@
 # 
 # ***********************************************************************
 
-export IMAU_GO_VERSION=1.20.5
 export IMAU_VSCODE_VERSION=4.16.0
-export IMAU_DUMP_INIT=1.2.5
-export GO_SDK_DIR=/root/sdk
 
+export GO_SDK_DIR=/root/sdk
 export CODE_ARCH=amd64
 
 [ $(arch) != "x86_64" ] && export CODE_ARCH=arm64
+
+    # go 
+    APP_REPO=https://github.com/golang/go.git
+    tags="$(git ls-remote --tags $APP_REPO | grep 'go[1-9]\.[0-9]*\.[0-9]*$' | awk -F'tags/' '{print $2}' | sort -t. -k1,1n -k2,2n -k3,3n)"
+    arryTags=(${tags})
+    latestTag=$(echo ${arryTags[-1]} | awk -F 'go' '{print$2}')
+    export IMAU_GO_VERSION=${latestTag}
+    
+    # dump 
+    APP_REPO=https://github.com/Yelp/dumb-init.git
+    tags="$(git ls-remote --tags $APP_REPO | grep 'v[1-9]\.[0-9]*\.[0-9]*$' | awk -F'tags/' '{print $2}' | sort -t. -k1,1n -k2,2n -k3,3n)"
+    arryTags=(${tags})
+    latestTag=$(echo ${arryTags[-1]} | awk -F 'v' '{print$2}')
+    export IMAU_DUMP_INIT=${latestTag}
+
+
+
+
 
 
 setTrash() {
