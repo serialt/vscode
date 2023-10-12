@@ -18,3 +18,10 @@
 ```yaml
 docker-compose up -d
 ```
+
+### vscode图标下载
+```
+https://vscode.dev/static/stable/favicon.ico    
+https://vscode.dev/static/stable/code-192.png   pwa-icon-192.png
+https://vscode.dev/static/stable/code-512.png   pwa-icon-512.png
+```

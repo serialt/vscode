@@ -32,6 +32,7 @@ RUN   sed -e 's|^mirrorlist=|#mirrorlist=|g' \
 ADD run.sh /opt/
 ADD settings.json /root/.local/share/code-server/Machine/settings.json
 ADD build.sh /opt/
+ADD favicon /opt/code-server/src/browser/media
 ADD vscode-marketplace.json /opt/
 ADD gitconfig /root/.gitconfig
 RUN bash /opt/build.sh && yum clean all
