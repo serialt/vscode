@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-08-07 06:28:24
+# Last modified : 2023-10-12 19:34:35
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -114,6 +114,8 @@ InstallDEV_ENV() {
         mv /tmp/code-server-${IMAU_VSCODE_VERSION}-linux-${CODE_ARCH} /opt/code-server
         wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v${IMAU_DUMP_INIT}/dumb-init_${IMAU_DUMP_INIT}_$(arch)
         chmod +x /usr/local/bin/dumb-init
+        \mv /opt/favicon/* /opt/code-server/src/browser/media/
+        rm -rf /opt/favicon/
         config_A=$(cat /opt/code-server/lib/vscode/product.json)
         config_B=$(cat /opt/vscode-marketplace.json )
         echo ${config_A} ${config_B} | jq -s add > /opt/code-server/lib/vscode/product.json
