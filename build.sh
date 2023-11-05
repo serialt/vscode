@@ -4,7 +4,7 @@
 # Author        : serialt
 # Email         : tserialt@gmail.com
 # Created Time  : 2022-02-17 06:55:27
-# Last modified : 2023-10-12 19:34:35
+# Last modified : 2023-11-05 17:37:01
 # FilePath      : /vscode/build.sh
 # Other         : 
 #               : 
@@ -134,6 +134,7 @@ Install_extension() {
         cweijan.vscode-office
         cweijan.vscode-typora
         donjayamanne.githistory
+        eamodio.gitlens
         felipecaputo.git-project-manager
         formulahendry.code-runner
         # gitlab.gitlab-workflow
