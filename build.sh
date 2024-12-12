@@ -128,12 +128,15 @@ Install_extension() {
         766b.go-outliner
         alefragnani.Bookmarks
         alefragnani.project-manager
+        arjun.swagger-viewer
+        aykutsarac.jsoncrack-vscode
         christian-kohler.path-intellisense
         # ckolkman.vscode-postgres
         codezombiech.gitignore
         cweijan.vscode-office
         cweijan.vscode-typora
         donjayamanne.githistory
+        donjayamanne.git-extension-pack
         eamodio.gitlens
         felipecaputo.git-project-manager
         formulahendry.code-runner
@@ -147,10 +150,15 @@ Install_extension() {
         ipedrazas.kubernetes-snippets
         jeff-hykin.better-dockerfile-syntax
         lunuan.kubernetes-templates
+        meezilla.json
         mgesbert.python-path
         mhutchie.git-graph
         mrmlnc.vscode-apache
         ms-python.python
+        moshfeu.diff-merge
+        ms-python.autopep8
+        ms-python.vscode-pylance
+        ms-python.debugpy
         ms-kubernetes-tools.vscode-kubernetes-tools
         ms-toolsai.jupyter
         ms-vscode.cmake-tools
@@ -161,14 +169,20 @@ Install_extension() {
         redhat.ansible
         redhat.vscode-yaml
         redjue.git-commit-plugin
+        shaharkazaz.git-merger
         sandipchitale.vscode-kubernetes-helm-extras
         shaharkazaz.git-merger
         tim-koehler.helm-intellisense
         vscode-icons-team.vscode-icons
+        visualstudioexptteam.vscodeintellicode
         wholroyd.jinja
+        vscjava.vscode-java-pack
+        vscjava.vscode-lombok
+        vscjava.vscode-spring-boot-dashboard
         xmtt.go-mod-grapher
         yzhang.markdown-all-in-one
         zainchen.json
+        zxh404.vscode-proto3
 
     )
 
