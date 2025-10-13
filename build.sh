@@ -14,7 +14,7 @@
 # ***********************************************************************
 
 
-export IMAU_VSCODE_VERSION=4.104.2
+export IMAU_VSCODE_VERSION=4.104.3
 
 export GO_SDK_DIR=/root/sdk
 export CODE_ARCH=amd64
